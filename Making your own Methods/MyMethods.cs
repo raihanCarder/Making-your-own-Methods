@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Making_your_own_Methods // Have to Change to Whatever Project we're using this class for
 {
+
     static class MyMethods
     {
         ///<summary>
@@ -205,19 +206,48 @@ namespace Making_your_own_Methods // Have to Change to Whatever Project we're us
         /// <param name="max">  Double value representing maximum value the array can generate.</param>
         /// <param name="size"> Double value representing Size of the array.</param>
         /// <returns> Returns array made within those values.</returns>
-        public static Array GetRandomArray(int min, int max, int size)
+        public static int[] GetRandomArray(int min, int max, int size)
         {
             Random generator = new Random();
-            double[] randomArray = new double[size];
+            int[] randomArray = new int[size];
             int number;
-            for (int i = 0; i <= randomArray.Count(); i++)
+            for (int i = 0; i < randomArray.Count(); i++)
             {
                 number = generator.Next(min, max+1);
-                randomArray[i] = number;
+                randomArray[i] = number; 
             }
 
             return randomArray;
                
+        }
+        /// <summary>
+        /// This method creates a random list and fills it within the given parameters
+        /// </summary>
+        /// <param name="min">Double value representing minimum value the List can generate.</param>
+        /// <param name="max">Double value representing maximum value the List can generate.</param>
+        /// <param name="size">Double value representing Size of the List.</param>
+        /// <returns> Returns List made within those values.</returns>
+        public static List<int> GetRandomList(int min, int max, int size)
+        {
+            Random generator = new Random();
+            List<int> numbers = new List<int>();
+            int number;
+
+            for (int i = 0; i <= size; i++)
+            {
+                number = generator.Next(min, max + 1);
+                numbers.Add(number); 
+            }
+
+            return numbers;
+
+        }
+        public static double GetAverage(int min, int max, int size)
+        {
+            double average;
+
+            average = GetRandomList(min, max, size).Average();
+            return Math.Round(average, 2);
         }
     }
     
