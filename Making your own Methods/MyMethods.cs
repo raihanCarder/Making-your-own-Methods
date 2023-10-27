@@ -153,7 +153,7 @@ namespace Making_your_own_Methods // Have to Change to Whatever Project we're us
         /// <returns> Returns Circumference of Circle</returns>
         public static double GetCircumference(double radius)
         {         
-            return 2*Math.PI*radius;
+            return Math.Round(2*Math.PI*radius, 2);
         }
         /// <summary>
         /// This method finds the amount of roots when given the a,b, and c values.
@@ -242,6 +242,13 @@ namespace Making_your_own_Methods // Have to Change to Whatever Project we're us
             return numbers;
 
         }
+        /// <summary>
+        /// This method gets the average of a random list filled with the given parameters.
+        /// </summary>
+        /// <param name="min">Double value representing minimum value the List can generate.</param>
+        /// <param name="max">Double value representing maximum value the List can generate.</param>
+        /// <param name="size">Double value representing Size of the List.</param>
+        /// <returns> Returns average of a random list.</returns>
         public static double GetAverage(int min, int max, int size)
         {
             double average;
